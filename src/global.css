@@ -7,10 +7,13 @@
   --gray-500: #262626;
   --gray-600: #1A1A1A;
   --gray-700: #0D0D0D;
+
   --purple: #8284FA;
   --purple-dark: #5E60CE;
+
   --blue: #4EA8DE;
   --blue-dark: #1E6F9F;
+
   --danger: #E25858;
 }
 
@@ -21,13 +24,15 @@
 }
 
 body {
-  background: #1A1A1A;
+  color: var(--gray-100);
+  background: var(--gray-600);
 
   /* aplica uma padronização para a fonte ficar mais detalhada */
   -webkit-font-smoothing: antialiased;
 }
 
 body, input, textarea, button {
+  color: var(--gray-100);
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 1rem;
