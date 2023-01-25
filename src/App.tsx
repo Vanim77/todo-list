@@ -1,4 +1,5 @@
-import rocketLogo from './assets/rocket.svg';
+import { Header } from './components/Header';
+
 import { PlusCircle } from 'phosphor-react';
 import styles from './App.module.css';
 import './global.css';
@@ -7,11 +8,7 @@ export function App() {
 
   return (
     <>
-      <header className={styles.header}>
-        <img src={rocketLogo} alt="Logotipo de foguete" />
-        <p className={styles.textTo}>to</p>
-        <p className={styles.textDo}>do</p>
-      </header>
+      <Header />
       <form className={styles.form}>
         <input placeholder="Adicione uma nova tarefa" type="text" />
         <div className={styles.newTaskButton}>
