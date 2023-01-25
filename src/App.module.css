@@ -25,34 +25,33 @@
   font-weight: 900;
 }
 
-.newTaskBar {
+.form {
   display: flex;
   justify-content: center;
   margin-top: -1.625rem;
   gap: 0.5rem;
 }
 
-.newTaskBar input {
-  color: var(--white);
-  background-color: var(--gray-500);
-  width: 39.875rem;
+.form input {
+  /* % equivalente a 39.875rem em uma tela de 1440x1024 */
+  width: 44.3%;
+  max-width: 39.875rem;
   height: 3.375rem;
+  background-color: var(--gray-500);
   border: 1px solid var(--gray-700);
   border-radius: 0.5rem;
   padding: 1rem;
 }
 
-.newTaskBar input::placeholder {
-  font-size: 1rem;
-  font-weight: 400;
+.form input::placeholder {
   color: var(--gray-300);
 }
 
-.newTaskBar input:hover {
+.form input:hover {
   cursor: pointer;
 }
 
-.newTaskBar input:focus {
+.form input:focus {
   outline: none;
   border-color: var(--purple-dark);
   cursor: text;
@@ -67,13 +66,14 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 
   /* transition to hover */
   transition: background-color 0.3s;
 }
 
 .newTaskButton:hover {
-  background-color: #4EA8DE;
+  background-color: var(--blue);
 }
 
 .newTaskButton button {
@@ -82,9 +82,49 @@
   border: 0;
   color: var(--gray-100);
   line-height: 140%;
+  cursor: pointer;
 }
 
-.newTaskButton img {
-  width: 1rem;
-  height: 1rem;
+main {
+  margin-top: 4rem;
+}
+
+.tasksContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasksInfo {
+  /* % equivalente a 736px em uma tela de 1440x1024 */
+  max-width: 51.1%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.563rem;
+  width: 100%;
+}
+
+.tasksInfoCreated, .tasksInfoDone {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tasksInfoCreated p {
+  color: var(--blue);
+}
+
+.tasksInfoDone p {
+  color: var(--purple);
+}
+
+.tasksInfoCreated p, .tasksInfoDone p {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.tasksInfoCreated span, .tasksInfoDone span {
+  font-size: 0.75rem;
+  background-color: var(--gray-400);
+  border-radius: 100%;
+  padding: 0.125rem 0.5rem;
 }
