@@ -1,13 +1,14 @@
 .form {
   display: flex;
   justify-content: center;
-  margin-top: -1.625rem;
   gap: 0.5rem;
+  width: 90%;
+  margin: auto;
+  margin-top: -1.625rem;
 }
 
 .form input {
-  /* % equivalente a 39.875rem em uma tela de 1440x1024 */
-  width: 44.3%;
+  width: 100%;
   max-width: 39.875rem;
   height: 3.375rem;
   background-color: var(--gray-500);
@@ -66,11 +67,12 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin: auto;
+  max-width: 46rem;
 }
 
 .tasksInfo {
-  /* % equivalente a 736px em uma tela de 1440x1024 */
-  max-width: 51.1%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.563rem;
