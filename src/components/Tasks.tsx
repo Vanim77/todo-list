@@ -6,12 +6,12 @@ export function Tasks() {
   return (
     <>
       <form className={styles.form}>
-          <input placeholder="Adicione uma nova tarefa" type="text" />
-          <div className={styles.newTaskButton}>
-            <button type="submit">Criar</button>
-            <PlusCircle size={20} />
-          </div>
-        </form>
+        <input placeholder="Adicione uma nova tarefa" type="text" />
+        <div className={styles.newTaskButton}>
+          <button type="submit">Criar</button>
+          <PlusCircle size={20} />
+        </div>
+      </form>
       <main>
         <div className={styles.tasksContainer}>
           <div className={styles.tasksInfo}>
