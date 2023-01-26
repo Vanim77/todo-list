@@ -123,7 +123,14 @@ export function Tasks() {
                         onChange={handleTaskCheckbox}
                         type="checkbox"
                       />
-                      <p>{task.description}</p>
+
+                      {task.isChecked
+                        ?
+                          <s>{task.description}</s>
+                        :
+                          <p>{task.description}</p>
+                      }
+
                       <Trash
                         id={task.id}
                         size={24}
