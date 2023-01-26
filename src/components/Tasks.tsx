@@ -34,6 +34,14 @@ export function Tasks() {
     setNewTaskText('');
   }
 
+  function handleDeleteTask(event: any) {
+    const idTaskToDelete = event.target.id;
+
+    const tasksWithoutDeletedOne = tasks.filter(task => task.id !== idTaskToDelete);
+
+    setTasks(tasksWithoutDeletedOne);
+  }
+
   return (
     <>
       <form onSubmit={handleNewTask} className={styles.form}>
@@ -89,7 +97,11 @@ export function Tasks() {
                     <li key={task.id} className={styles.singleTask}>
                       <input type="checkbox" />
                       <p>{task.description}</p>
-                      <Trash size={24} />
+                        <Trash
+                          id={task.id}
+                          size={24}
+                          onClick={handleDeleteTask}
+                        />
                     </li>
                   );
                 })}
