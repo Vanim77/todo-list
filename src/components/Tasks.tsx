@@ -1,4 +1,4 @@
-import { PlusCircle, ClipboardText } from 'phosphor-react';
+import { PlusCircle, ClipboardText, Trash } from 'phosphor-react';
 
 import styles from './Tasks.module.css';
 
@@ -34,11 +34,18 @@ export function Tasks() {
         </div>
 
         <section>
-          <div className={styles.emptyTasks}>
+          {/* <div className={styles.emptyTasks}>
             <ClipboardText size={56} />
             <p>Você ainda não tem tarefas cadastradas</p>
             <p>Crie tarefas e organize seus itens a fazer</p>
-          </div>
+          </div> */}
+          <ul className={styles.taskList}>
+            <li className={styles.singleTask}>
+              <input type="checkbox" />
+              <p>Limpar a casa</p>
+              <Trash size={24} />
+            </li>
+          </ul>
         </section>
       </main>
     </>
