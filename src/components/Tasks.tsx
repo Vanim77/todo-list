@@ -42,6 +42,22 @@ export function Tasks() {
     setTasks(tasksWithoutDeletedOne);
   }
 
+  function handleTaskCheckbox(event: ChangeEvent<HTMLInputElement>) {
+    const tasksWith = tasks.reduce((acc, task) => {
+      if (task.id === event.target.id) {
+        task.isChecked = event.target.checked;
+      }
+
+      acc.push(task)
+
+      return acc;
+    }, [] as ITask[])
+    
+    setTasks(tasksWith);
+  }
+  
+  const concludedTasks = tasks.filter(task => task.isChecked).length;
+
   return (
     <>
       <form onSubmit={handleNewTask} className={styles.form}>
@@ -68,7 +84,7 @@ export function Tasks() {
               <p>
                 Tarefas criadas
               </p>
-              <span>0</span>
+              <span>{tasks.length}</span>
             </div>
 
             <div>
@@ -76,7 +92,14 @@ export function Tasks() {
                 <p>
                   Concluídas
                 </p>
-                <span>0</span>
+                <span>
+                  {tasks.length === 0
+                    ?
+                      0 
+                    :
+                      `${concludedTasks} de ${tasks.length}`
+                  }
+                </span>
               </div>
             </div>
           </div>
@@ -95,13 +118,17 @@ export function Tasks() {
                 {tasks.map(task => {
                   return (
                     <li key={task.id} className={styles.singleTask}>
-                      <input type="checkbox" />
+                      <input
+                        id={task.id}
+                        onChange={handleTaskCheckbox}
+                        type="checkbox"
+                      />
                       <p>{task.description}</p>
-                        <Trash
-                          id={task.id}
-                          size={24}
-                          onClick={handleDeleteTask}
-                        />
+                      <Trash
+                        id={task.id}
+                        size={24}
+                        onClick={handleDeleteTask}
+                      />
                     </li>
                   );
                 })}
