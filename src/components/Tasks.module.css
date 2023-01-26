@@ -103,3 +103,28 @@ main {
   border-radius: 100%;
   padding: 0.125rem 0.5rem;
 }
+
+.emptyTasks {
+  width: 90%;
+  margin: auto;
+  max-width: 46rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem;
+  border-top: 1px solid var(--gray-400);
+}
+
+.emptyTasks svg {
+  color: var(--gray-400);
+  margin-bottom: 1rem;
+}
+
+.emptyTasks p {
+  color: var(--gray-300);
+}
+
+.emptyTasks p:first-of-type {
+  font-weight: 700;
+}
