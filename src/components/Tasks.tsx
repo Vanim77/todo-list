@@ -14,7 +14,7 @@ export function Tasks() {
   const [newTaskText, setNewTaskText] = useState('');
   const [tasks, setTasks] = useState([] as ITask[]);
 
-  const isTaskContentEmpty = newTaskText.length === 0;
+  const isTaskContentEmpty = newTaskText.trim().length === 0;
 
   function handleNewTaskContent(event: ChangeEvent<HTMLInputElement>) {
     setNewTaskText(event.target.value);
@@ -43,7 +43,7 @@ export function Tasks() {
   }
 
   function handleTaskCheckbox(event: ChangeEvent<HTMLInputElement>) {
-    const tasksWith = tasks.reduce((acc, task) => {
+    const allTasksWithCheckUpdated = tasks.reduce((acc, task) => {
       if (task.id === event.target.id) {
         task.isChecked = event.target.checked;
       }
@@ -53,7 +53,7 @@ export function Tasks() {
       return acc;
     }, [] as ITask[])
     
-    setTasks(tasksWith);
+    setTasks(allTasksWithCheckUpdated);
   }
   
   const concludedTasks = tasks.filter(task => task.isChecked).length;
