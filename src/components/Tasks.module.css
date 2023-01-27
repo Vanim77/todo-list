@@ -151,8 +151,49 @@ main {
   align-items: flex-start;
 }
 
-.singleTask input[type="radio"] {
-  width: 1.5rem;
+.singleTask input[type="checkbox"] {
+  /* reseta aparência do checkbox */
+  appearance: none;
+  -webkit--appearance: none;
+
+  color: var(--blue);
+  min-width: 1.15em;
+  min-height: 1.15em;
+  border: 2px solid currentColor;
+  border-radius: 62.438rem;
+
+  /* centraliza o "✔" na próxima configuração de input["checkbox"] */
+  display: grid;
+  align-self: center;
+  place-content: center;
+}
+
+.singleTask input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: center;
+  transition: 0.1s transform ease-in-out;
+  background-color: var(--gray-100);
+}
+
+.singleTask input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.singleTask input[type="checkbox"]:checked {
+  background-color: var(--purple);
+  border: 2px solid var(--purple);
+}
+
+.singleTask input[type="checkbox"]:focus {
+  box-shadow: none;
+}
+
+.singleTask input[type="checkbox"]:hover {
+  cursor: pointer;
 }
 
 .singleTask p, .singleTask s {
@@ -163,9 +204,11 @@ main {
 .singleTask svg {
   color: var(--gray-300);
   border-radius: 0.25rem;
+  padding: 0.125rem;
 }
 
 .singleTask svg:hover {
   cursor: pointer;
   color: var(--danger);
+  background-color: var(--gray-400);
 }
