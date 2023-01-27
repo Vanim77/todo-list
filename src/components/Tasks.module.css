@@ -111,6 +111,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   padding: 4rem 1.5rem;
   border-top: 1px solid var(--gray-400);
