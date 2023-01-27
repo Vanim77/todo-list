@@ -205,7 +205,6 @@ main {
 .singleTask svg {
   color: var(--gray-300);
   border-radius: 0.25rem;
-  padding: 0.125rem;
 }
 
 .singleTask svg:hover {
