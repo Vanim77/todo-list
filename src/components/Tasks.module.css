@@ -59,6 +59,10 @@
   cursor: pointer;
 }
 
+.newTaskButton button:disabled {
+  cursor: not-allowed;
+}
+
 main {
   margin-top: 4rem;
 }
