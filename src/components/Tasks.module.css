@@ -156,6 +156,8 @@ main {
   align-items: flex-start;
 }
 
+/* Aparência do checkbox feita com ajuda de Israel Nazareth */
+
 .singleTask input[type="checkbox"] {
   /* reseta aparência do checkbox */
   appearance: none;
